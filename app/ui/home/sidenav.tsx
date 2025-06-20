@@ -1,5 +1,4 @@
 import NavLinks from '@/app/ui/home/nav-links';
-import { PowerIcon } from '@heroicons/react/24/outline';
 
 export default function SideNav() {
   return (
