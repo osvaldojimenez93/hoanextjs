@@ -3,13 +3,13 @@ import Header from '@/app/ui/home/header';
  
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
-    <div className="flex h-screen">
-      <div className="w-64 h-full flex-shrink-0">
+    <div className="flex flex-col md:flex-row h-screen">
+      <div className="w-full md:w-64 md:h-full md:flex-shrink-0">
         <SideNav />
       </div>
       <div className="flex-grow overflow-y-auto">
         <Header />       
-        <div className="p-6">
+        <div className="p-3 md:p-6">
           {children}
         </div>
       </div>
