@@ -26,14 +26,10 @@ export default function Newsletter() {
     }
 
     return (
-        <>
-            <Document
-                file="/pdfs/NSAH_Newsletter_02_2025.pdf"
-                onLoadSuccess={onDocumentLoadSuccess}>
-                <Page pageNumber={pageNumber} />
-            </Document>
-            <div className="mt-4 flex items-center justify-between">
-                <p className="text-sm">
+        <div className="flex flex-col w-full">
+            {/* Navigation controls at the top */}
+            <div className="mb-4 flex items-center justify-between">
+                <p className="text-sm md:text-base">
                     Page {pageNumber || (numPages ? 1 : '--')} of {numPages || '--'}
                 </p>
                 <div className="space-x-2">
@@ -41,7 +37,7 @@ export default function Newsletter() {
                         type="button"
                         disabled={pageNumber <= 1}
                         onClick={previousPage}
-                        className="rounded bg-blue-500 px-3 py-1 text-white disabled:bg-gray-300"
+                        className="rounded bg-blue-500 px-2 py-1 md:px-3 md:py-1.5 text-white disabled:bg-gray-300 text-xs md:text-sm transition hover:bg-blue-600"
                     >
                         Previous
                     </button>
@@ -49,12 +45,29 @@ export default function Newsletter() {
                         type="button"
                         disabled={pageNumber >= (numPages || 0)}
                         onClick={nextPage}
-                        className="rounded bg-blue-500 px-3 py-1 text-white disabled:bg-gray-300"
+                        className="rounded bg-blue-500 px-2 py-1 md:px-3 md:py-1.5 text-white disabled:bg-gray-300 text-xs md:text-sm transition hover:bg-blue-600"
                     >
                         Next
                     </button>
                 </div>
             </div>
-        </>
+
+            {/* PDF Document with responsive sizing */}
+            <div className="flex justify-center">
+                <Document
+                    file="/pdfs/NSAH_Newsletter_02_2025.pdf"
+                    onLoadSuccess={onDocumentLoadSuccess}
+                    className="w-full">
+                    <Page 
+                        pageNumber={pageNumber} 
+                        renderTextLayer={false}
+                        renderAnnotationLayer={false}
+                        className="shadow-lg"
+                        scale={1}
+                        width={window.innerWidth > 1024 ? 800 : undefined}
+                    />
+                </Document>
+            </div>
+        </div>
     );
 }
