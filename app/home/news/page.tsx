@@ -1,4 +1,4 @@
-import Newsletter from "@/app/ui/news/newsletter";
+import Newsletter from "@/app/components/news/newsletter";
 
 export default function Page() {
     return (

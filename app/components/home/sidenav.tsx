@@ -1,6 +1,6 @@
 'use client';
 
-import NavLinks from '@/app/ui/home/nav-links';
+import NavLinks from '@/app/components/home/nav-links';
 import { useState } from 'react';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 

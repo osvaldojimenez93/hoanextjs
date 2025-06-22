@@ -1,5 +1,5 @@
 
-import { Welcome, LatestNews, CommunityForms, CommunityResources } from '@/app/ui/home';
+import { Welcome, LatestNews, CommunityForms, CommunityResources } from '@/app/components/home';
 
 export default async function Page() {
   return (
