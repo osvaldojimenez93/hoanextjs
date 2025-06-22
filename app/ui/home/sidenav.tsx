@@ -6,6 +6,11 @@ import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 
 export default function SideNav() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  
+  // Function to close mobile menu
+  const closeMobileMenu = () => {
+    setMobileMenuOpen(false);
+  };
 
   return (
     <div className="bg-white shadow-sm md:shadow-none md:h-full">
@@ -28,7 +33,7 @@ export default function SideNav() {
       <div className={`${mobileMenuOpen ? 'block' : 'hidden'} md:block md:h-full`}>
         <div className="flex h-full flex-col px-3 py-2 md:px-2">
           <div className="flex grow flex-col justify-between space-y-2">
-            <NavLinks />
+            <NavLinks closeMobileMenu={closeMobileMenu} />
             <div className="hidden h-auto w-full grow rounded-md bg-gray-50 md:block"></div>
           </div>
         </div>
