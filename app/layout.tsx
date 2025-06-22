@@ -1,4 +1,4 @@
-import '@/app/ui/global.css';
+import '@/app/styles/global.css';
 import { inter } from '@/app/ui/fonts';
 import { Metadata, Viewport } from 'next';
 
