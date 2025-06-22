@@ -1,5 +1,5 @@
 import '@/app/styles/global.css';
-import { inter } from '@/app/ui/fonts';
+import { inter } from '@/app/styles/fonts';
 import { Metadata, Viewport } from 'next';
 
 export const metadata: Metadata = {
