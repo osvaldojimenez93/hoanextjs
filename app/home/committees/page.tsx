@@ -1,41 +1,18 @@
 export default function Page() {
-  const committees = {
-    "City Community Relations": [
-      "Jessica Grigsby",
-      "Davin Dukes",
-      "Cole Hudson",
-      "Osvaldo 'Jim' Jimenez",
-    ],
-    "Neighborhood Community Relations": [
-      "Davin Dukes",
-      "Osvaldo 'Jim' Jimenez",
-      "Kevin Mantovani",
-      "Alan Tuma",
-    ],
-    "Budget and Finance": [
-      "Jessica Grigsby",
-      "Mike Dammann",
-      "Cole Hudson",
-    ],
-    "Website and Social Media": [
-      "Osvaldo Jimenez",
-      "Greg Jones",
-    ],
-    "Development and Real Estate": [
-      "Jessica Grigsby",
-      "Cole Hudson",
-      "Richard Ramos",
-      "Linda Pilar",
-    ],
-    "Social Events Coordinator": ["Looking for volunteers!"],
-    "Park Maintenance and Clean Up": ["Looking for volunteers!"],
-    "Sign Maintenance": ["Looking for volunteers!"],
-    "Architectural": [
-      "Miguel Sanchez",
-      "Thomas",
-      "Jessica Grigsby",
-    ],
-  };
+  const committees = Object.keys({
+    "City Community Relations": [],
+    "Neighborhood Community Relations": [],
+    "Budget and Finance": [],
+    "Website and Social Media": [],
+    "Development and Real Estate": [],
+    "Social Events Coordinator": [],
+    "Park Maintenance and Clean Up": [],
+    "Sign Maintenance": [],
+    "Architectural": [],
+  }).reduce((acc: Record<string, string[]>, committee) => {
+    acc[committee] = ["Looking for volunteers!"];
+    return acc;
+  }, {} as Record<string, string[]>);
 
   return (
     <div className="p-6">
